@@ -92,11 +92,105 @@ a,
     li {
       font-weight: 700;
       color: var(--pink);
+      display: flex;
+      align-items: center;
 
       i {
         color: var(--teal);
+        font-size: 0.5em;
+        margin-right: 8px;
       }
     }
+  }
+}
+
+/* pulse */
+.pulse {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+
+  .circle1 {
+    background-color: #d649656f;
+    height: 250px;
+    border-radius: 50%;
+    width: 250px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse3 10s linear infinite;
+  }
+
+  .circle2 {
+    background-color: #b919397e;
+    height: 150px;
+    border-radius: 50%;
+    width: 150px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 4s linear infinite;
+  }
+
+  .circle3 {
+    background-color: var(--red);
+    height: 35px;
+    border-radius: 50%;
+    width: 35px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse2 3s linear infinite;
+  }
+}
+@keyframes pulse {
+  0% {
+    width: 150px;
+    height: 150px;
+  }
+  50% {
+    width: 170px;
+    height: 170px;
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes pulse2 {
+  0% {
+    width: 35px;
+    height: 35px;
+  }
+  50% {
+    width: 40px;
+    height: 40px;
+  }
+  100% {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@keyframes pulse3 {
+  0% {
+    width: 250px;
+    height: 250px;
+  }
+  50% {
+    width: 270px;
+    height: 270px;
+  }
+  100% {
+    width: 250px;
+    height: 250px;
   }
 }
 
@@ -197,6 +291,7 @@ section.info {
         float: right;
         color: var(--yellow);
         margin-right: -22px;
+        font-size: 1.5em;
       }
     }
   }
@@ -361,6 +456,10 @@ footer {
 }
 
 @media (min-width: 300px) {
+  .pulse {
+    left: 35%;
+    bottom: 15px;
+  }
   .logo {
     width: 70%;
   }
@@ -374,7 +473,9 @@ footer {
     font-size: 30px;
     line-height: 1.2;
 
-    .btn.position-absolute{display:none}
+    .btn.position-absolute {
+      display: none;
+    }
   }
 
   .hero {
@@ -412,6 +513,7 @@ footer {
     }
   }
   section.plan {
+    font-weight: 500;
     h2 {
       font-size: 30px;
     }
@@ -436,6 +538,10 @@ footer {
 @media (min-width: 768px) {
   .logo {
     width: auto;
+  }
+  .pulse {
+    left: 45%;
+    bottom: 30px;
   }
   .circle {
     width: 200px;
@@ -470,16 +576,23 @@ footer {
     background-position: top center;
     background-size: cover;
   }
+  .pulse {
+    left: 35%;
+    bottom: 10%;
+  }
   .circle {
     width: 400px;
     height: 400px;
     top: -206px;
-    right: -150px;
   }
 
-  .hh{
-    position:relative;
-    .btn.position-absolute{display:block; top:0; right:0;}
+  .hh {
+    position: relative;
+    .btn.position-absolute {
+      display: block;
+      top: 0;
+      right: 0;
+    }
   }
 
   .top {
@@ -507,10 +620,10 @@ footer {
   }
 
   .circle {
-    width: 560px;
+    width: 33%;
     height: 560px;
-    top: -250px;
-    right: -95px;
+    top: -316px;
+    right: -82px;
   }
 
   .navbar {
@@ -553,6 +666,13 @@ footer {
       .card-body {
         padding-left: 25px;
         padding-right: 25px;
+      }
+    }
+  }
+  section.info {
+    .card {
+      h3 {
+        font-size: 25px;
       }
     }
   }
